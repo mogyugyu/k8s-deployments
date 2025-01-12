@@ -13,7 +13,7 @@ data:
     p, role:guest, applications, get, sync/*, allow
     p, role:guest, projects, get, *, allow
 
-    p, role:org-readonly, applications, get, *, allow
+    p, role:org-readonly, applications, get, */*, allow
 
     p, role:org-admin, applications, *, */*, allow
     p, role:org-admin, clusters, get, *, allow
