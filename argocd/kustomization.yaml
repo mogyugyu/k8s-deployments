@@ -6,9 +6,11 @@ namespace: argocd
 resources:
   - namespace.yaml
   - github.com/argoproj/argo-cd//manifests/cluster-install?ref=v2.13.2
+  - github.com/argoproj/argo-cd//notifications_catalog/install.yaml?ref=v2.13.2
   - ingress.yaml
 
 patches:
   - path: overlays/argocd-cm.yaml
   - path: overlays/argocd-cmd-params-cm.yaml
+  - path: overlays/argocd-notifications-cm.yaml
   - path: overlays/argocd-rbac-cm.yaml
