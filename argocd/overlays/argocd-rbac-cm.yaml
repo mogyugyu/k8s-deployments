@@ -13,10 +13,7 @@ data:
     p, role:guest, applications, get, sync/*, allow
     p, role:guest, projects, get, *, allow
 
-    p, role:org-readonly, applications, get, default/*, allow
-    p, role:org-readonly, applications, get, pow/*, allow
-    p, role:org-readonly, applications, get, twibot-to-discord/*, allow
-    p, role:org-readonly, logs, get, *, allow
+    p, role:org-readonly, applications, get, *, allow
 
     p, role:org-admin, applications, *, */*, allow
     p, role:org-admin, clusters, get, *, allow
@@ -34,6 +31,6 @@ data:
     p, role:org-admin, logs, get, *, allow
     p, role:org-admin, exec, create, */*, allow
 
-    g, Cgg1MDUwNjUxORIGZ2l0aHVi, role:admin
-    g, eoeo-org:cd, role:org-readonly
-    g, Cgg2OTMzNzYyNBIGZ2l0aHVi, role:admin
+    g, mogyugyu, role:org-readonly
+    g, mogyugyu:cd-admin, role:admin
+  scopes: '[groups]'
