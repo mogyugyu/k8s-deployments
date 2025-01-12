@@ -19,10 +19,10 @@ data:
         id: github
         name: GitHub
         config:
-          clientID: Ov23liBMMJRLwGZTBy43
+          clientID: Iv23liihKd6wDsQNqJDY
           clientSecret: $dex.github.clientSecret
           orgs:
-          - name: eoeo-org
+          - name: mogyugyu
             teams:
               - cd
   exec.enabled: "true"
