@@ -23,6 +23,4 @@ data:
           clientSecret: $dex.github.clientSecret
           orgs:
           - name: mogyugyu
-            teams:
-              - cd
   exec.enabled: "true"
