@@ -6,6 +6,8 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
+  annotations:
+    notifications.argoproj.io/subscribe.on-deployed.github: ""
   destination:
     namespace: art-runners
     server: https://kubernetes.default.svc
