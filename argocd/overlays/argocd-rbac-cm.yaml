@@ -31,6 +31,6 @@ data:
     p, role:org-admin, logs, get, *, allow
     p, role:org-admin, exec, create, */*, allow
 
-    g, mogyugyu, role:org-readonly
+    g, mogyugyu:cd, role:org-readonly
     g, mogyugyu:cd-admin, role:admin
   scopes: '[groups]'
