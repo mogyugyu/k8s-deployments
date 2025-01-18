@@ -1,0 +1,61 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		"config:best-practices",
+		":disableRateLimiting",
+		":disablePrControls",
+		"helpers:pinGitHubActionDigests",
+		"security:openssf-scorecard"
+	],
+	"commitBodyTable": true,
+	"kubernetes": {
+		"fileMatch": [
+			"\\.yaml$"
+		]
+	},
+	"customManagers": [
+		{
+			"customType": "regex",
+			"fileMatch": [
+				"k3s-upgrade/plans.yaml"
+			],
+			"matchStrings": [
+				"version\\s*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"
+			],
+			"depNameTemplate": "k3s",
+			"versioningTemplate": "semver-coerced",
+			"datasourceTemplate": "custom.k3s"
+		}
+	],
+	"customDatasources": {
+		"k3s": {
+			"defaultRegistryUrlTemplate": "https://update.k3s.io/v1-release/channels",
+			"transformTemplates": [
+				"{\"releases\":[{\"version\": $$.(data[id = 'latest'].latest),\"sourceUrl\":\"https://github.com/k3s-io/k3s\",\"changelogUrl\":$join([\"https://github.com/k3s-io/k3s/releases/tag/\",data[id = 'latest'].latest])}],\"sourceUrl\": \"https://github.com/k3s-io/k3s\",\"homepage\": \"https://k3s.io/\"}"
+			]
+		}
+	},
+	"packageRules": [
+		{
+			"matchManagers": [
+				"kubernetes"
+			],
+			"semanticCommitType": "manifest",
+			"semanticCommitScope": null
+		},
+		{
+			"matchDepNames": [
+				"ghcr.io/discordjs-japan/om"
+			],
+			"automerge": true,
+			"automergeType": "branch",
+			"ignoreTests": true
+		},
+		{
+			"matchFileNames": [
+				"k3s-upgrade/plans.yaml"
+			],
+			"pinDigests": false
+		}
+	]
+}
