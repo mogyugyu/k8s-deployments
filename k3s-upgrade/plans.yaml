@@ -35,6 +35,9 @@ spec:
     - key: "low-spec"
       operator: "Exists"
       effect: "NoExecute"
+    - key: "agent"
+      operator: "Exists"
+      effect: "NoExecute"
   prepare:
     args:
       - prepare
