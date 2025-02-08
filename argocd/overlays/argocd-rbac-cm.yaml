@@ -34,6 +34,9 @@ data:
     g, mogyugyu:cd, role:org-readonly
     g, mogyugyu:cd-admin, role:admin
 
+    p, role:team-om, logs, get, discord-bots/discord-bots, allow
+    g, mogyugyu:om, role:team-om
+
     p, role:team-twibot-to-discord, logs, get, twibot-to-discord/*, allow
     g, Zel9278, role:team-twibot-to-discord
     g, kazukazu123123, role:team-twibot-to-discord
