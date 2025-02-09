@@ -6,10 +6,10 @@ data:
   policy.default: role:guest
   policy.csv: |
     p, role:guest, applications, get, default/*, allow
-    p, role:guest, applications, get, discord-bot/*, allow
+    p, role:guest, applications, get, discord-bots/*, allow
     p, role:guest, applications, get, pow/*, allow
     p, role:guest, applications, get, twibot-to-discord/*, allow
-    p, role:guest, applications, get, misskey-bot/*, allow
+    p, role:guest, applications, get, misskey-bots/*, allow
     p, role:guest, applications, get, sync/*, allow
     p, role:guest, projects, get, *, allow
 
