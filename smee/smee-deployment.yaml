@@ -30,6 +30,15 @@ spec:
             runAsUser: 65532
             seccompProfile:
               type: RuntimeDefault
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/arch
+                    operator: In
+                    values:
+                      - amd64
       tolerations:
         - key: "low-spec"
           operator: "Exists"
