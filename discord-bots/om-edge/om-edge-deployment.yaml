@@ -20,6 +20,9 @@ spec:
         - name: om-edge
           image: ghcr.io/discordjs-japan/om:edge@sha256:b6ced419bb9628a9b84b9f1f25c28419e405b39ca627289bd14911fd9d859653
           imagePullPolicy: IfNotPresent # because digest pinning
+          env:
+            - name: LOG_LEVEL
+              value: debug
           envFrom:
             - secretRef:
                 name: om-edge-token
