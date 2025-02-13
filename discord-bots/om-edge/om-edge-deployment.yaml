@@ -16,6 +16,16 @@ spec:
       labels:
         app: om-edge
     spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: mogyuchi.jp.node-restriction.kubernetes.io/network
+                    operator: NotIn
+                    values:
+                      - oracle
       containers:
         - name: om-edge
           image: ghcr.io/discordjs-japan/om:edge@sha256:b6ced419bb9628a9b84b9f1f25c28419e405b39ca627289bd14911fd9d859653
