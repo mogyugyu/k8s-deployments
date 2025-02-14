@@ -22,7 +22,7 @@ spec:
             - weight: 1
               preference:
                 matchExpressions:
-                  - key: mogyuchi.jp.node-restriction.kubernetes.io/network
+                  - key: topology.kubernetes.io/zone
                     operator: NotIn
                     values:
                       - oracle
