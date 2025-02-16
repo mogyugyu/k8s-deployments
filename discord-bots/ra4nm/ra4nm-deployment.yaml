@@ -14,6 +14,16 @@ spec:
       labels:
         app: ra4nm
     spec:
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              preference:
+                matchExpressions:
+                  - key: topology.kubernetes.io/zone
+                    operator: NotIn
+                    values:
+                      - oracle
       containers:
         - name: ra4nm
           image: ghcr.io/misskey-art/role-adder-for-new-member:main@sha256:880e351f9e4134b465651f7871d6219aed0a481686412ecf7a8f0571c9f9b430
