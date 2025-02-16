@@ -16,7 +16,7 @@ spec:
     repoURL: ghcr.io/actions/actions-runner-controller-charts
     targetRevision: 0.10.1
     helm:
-      releaseName: eoeo-runner-set
+      releaseName: arc-x64
       parameters:
         - name: githubConfigUrl
           value: "https://github.com/eoeo-org"
