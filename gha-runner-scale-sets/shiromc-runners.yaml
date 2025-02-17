@@ -1,0 +1,51 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    notifications.argoproj.io/subscribe.on-deployed.github: ""
+  name: gha-shiromc-runners
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: shiromc-runners
+    server: https://kubernetes.default.svc
+  source:
+    chart: gha-runner-scale-set
+    repoURL: ghcr.io/actions/actions-runner-controller-charts
+    targetRevision: 0.10.1
+    helm:
+      parameters:
+        - name: runnerScaleSetName
+          value: "arc-x64"
+        - name: githubConfigUrl
+          value: "https://github.com/shiromc-dev"
+        - name: githubConfigSecret
+          value: "pre-defined-secret"
+        - name: controllerServiceAccount.namespace
+          value: arc-systems
+        - name: controllerServiceAccount.name
+          value: arc-gha-rs-controller
+      values: |
+        template:
+          spec:
+            containers:
+              - resources:
+                  limits:
+                    cpu: 1000m
+                    memory: 2000Mi
+                securityContext:
+                  readOnlyRootFilesystem: true
+                  allowPrivilegeEscalation: false
+                  capabilities:
+                    add:
+                      - NET_ADMIN
+  project: gha-runner
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+      - Replace=true
+      - CreateNamespace=true
+      - PruneLast=true

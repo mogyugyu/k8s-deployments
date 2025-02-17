@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - art-runners.yaml
   - eoeo-runners.yaml
+  - shiromc-runners.yaml
