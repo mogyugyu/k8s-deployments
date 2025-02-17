@@ -31,7 +31,10 @@ spec:
         template:
           spec:
             containers:
-              - resources:
+              - name: runner
+                image: ghcr.io/actions/actions-runner:latest
+                command: ["/home/runner/run.sh"]
+                resources:
                   limits:
                     cpu: 1000m
                     memory: 2000Mi
