@@ -29,6 +29,17 @@ spec:
           value: arc-systems
         - name: controllerServiceAccount.name
           value: arc-gha-rs-controller
+      values: |
+        template:
+          spec:
+            containers:
+              - name: runner
+                image: ghcr.io/actions/actions-runner:latest
+                command: ["/home/runner/run.sh"]
+                resources:
+                  limits:
+                    cpu: 1000m
+                    memory: 3000Mi
   project: gha-runner
   syncPolicy:
     automated:
