@@ -32,19 +32,13 @@ spec:
           spec:
             containers:
               - name: runner
-                image: ghcr.io/actions/actions-runner:latest@sha256:c02e8e1b479ea39b196c3bb0a40a66a191302654a6ef5c042eafe11c13323137
+                image: ghcr.io/actions/actions-runner:latest
                 command: ["/home/runner/run.sh"]
                 resources:
                   limits:
                     cpu: 1000m
-                    memory: 2000Mi
-                securityContext:
-                  readOnlyRootFilesystem: true
-                  allowPrivilegeEscalation: false
-                  capabilities:
-                    add:
-                      - NET_ADMIN
-  project: gha-runner
+                    memory: 3000Mi
+  project: shiromc-x64
   syncPolicy:
     automated:
       prune: true
