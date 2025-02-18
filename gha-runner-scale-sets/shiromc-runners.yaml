@@ -18,7 +18,7 @@ spec:
     helm:
       parameters:
         - name: runnerScaleSetName
-          value: "arc-x64"
+          value: "shiromc-x64"
         - name: githubConfigUrl
           value: "https://github.com/shiromc-dev"
         - name: githubConfigSecret
@@ -38,7 +38,7 @@ spec:
                   limits:
                     cpu: 1000m
                     memory: 3000Mi
-  project: shiromc-x64
+  project: gha-runner
   syncPolicy:
     automated:
       prune: true
