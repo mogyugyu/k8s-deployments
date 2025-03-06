@@ -41,4 +41,10 @@ data:
     g, Zel9278, role:team-twibot-to-discord
     g, kazukazu123123, role:team-twibot-to-discord
 
+    p, role:team-pow, applications, *, pow/*, allow
+    p, role:team-pow, logs, get, pow/*, allow
+    g, kazukazu123123, role:team-pow
+    g, Zel9278, role:team-pow
+    g, Mogyuchi, role:team-pow
+
   scopes: '[groups, preferred_username]'
