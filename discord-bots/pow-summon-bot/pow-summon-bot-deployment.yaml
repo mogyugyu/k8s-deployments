@@ -28,7 +28,7 @@ spec:
                       - oracle
       containers:
         - name: pow-summon-bot
-          image: ghcr.io/eoeo-org/pow-summon-discordbot:1.1.23@sha256:475de7efea143fa432fd40eb8a996ce9c9a7ed8e8af26501719fcd78455cdd85
+          image: ghcr.io/eoeo-org/pow-summon-discordbot:1.1.24@sha256:31370299079b8bafac5a25f37821ec6530f2a1a18afad71b7be3fc1f5918dfb5
           imagePullPolicy: IfNotPresent # because digest pinning
           envFrom:
             - secretRef:
