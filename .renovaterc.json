@@ -9,15 +9,15 @@
 	],
 	"commitBodyTable": true,
 	"kubernetes": {
-		"fileMatch": [
-			"\\.yaml$"
+		"managerFilePatterns": [
+			"/\\.yaml$/"
 		]
 	},
 	"customManagers": [
 		{
 			"customType": "regex",
-			"fileMatch": [
-				"k3s-upgrade/plans.yaml"
+			"managerFilePatterns": [
+				"/k3s-upgrade/plans.yaml/"
 			],
 			"matchStrings": [
 				"version\\s*:\\s*[\"']?(?<currentValue>.+?)[\"']?\\s"
