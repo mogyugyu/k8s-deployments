@@ -9,7 +9,7 @@ resources:
   - ingress.yaml
 
 patches:
-  - path: https://raw.githubusercontent.com/argoproj/argo-cd/v3.0.9/notifications_catalog/install.yaml
+  - path: https://raw.githubusercontent.com/argoproj/argo-cd/v3.1.4/notifications_catalog/install.yaml
   - path: overlays/argocd-cm.yaml
   - path: overlays/argocd-cmd-params-cm.yaml
   - path: overlays/argocd-notifications-cm.yaml
