@@ -28,7 +28,7 @@ spec:
                       - oracle
       containers:
         - name: om-edge
-          image: ghcr.io/discordjs-japan/om:edge@sha256:f96f7fd024bbc060b95bbddb59560695326c7bebaf3305d074109f1c41616c68
+          image: ghcr.io/discordjs-japan/om:edge@sha256:1e0f578f290b06633c35f6b6ac817bef983c5c87341191a593e0e153db1d9c96
           imagePullPolicy: IfNotPresent # because digest pinning
           env:
             - name: LOG_LEVEL
