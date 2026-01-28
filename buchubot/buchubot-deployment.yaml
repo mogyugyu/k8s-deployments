@@ -26,7 +26,7 @@ spec:
                       - oracle
       containers:
         - name: buchubot
-          image: ghcr.io/kazukazu123123/buchubot:main@sha256:6e0df7e37d7a8dca29649a35e7f4a575f3839a1516aeedd29458393064c56379
+          image: ghcr.io/kazukazu123123/buchubot:main@sha256:4e735562f2368346f239ba3562e64185a1f2356e62bcaee67c50004796ee5a60
           imagePullPolicy: IfNotPresent # because digest pinning
           envFrom:
             - secretRef:
