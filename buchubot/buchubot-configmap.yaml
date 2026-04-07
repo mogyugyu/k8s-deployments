@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: buchubot-config
+  labels:
+    app: buchubot
+data:
+  config-dir:
+    config.toml: |
+      domain = "misskey.art"
+      use_tls = true
+      cron_schedule = "*/10 * * * *"

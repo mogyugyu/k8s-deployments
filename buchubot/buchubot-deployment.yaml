@@ -26,11 +26,19 @@ spec:
                       - oracle
       containers:
         - name: buchubot
-          image: ghcr.io/kazukazu123123/buchubot:main@sha256:4e735562f2368346f239ba3562e64185a1f2356e62bcaee67c50004796ee5a60
+          image: ghcr.io/kazukazu123123/buchubot:main@sha256:26515e5f5e92a4ad0a0cde24f873adf80847734c0ab3dbcd642b55ba62d34be1
           imagePullPolicy: IfNotPresent # because digest pinning
           envFrom:
             - secretRef:
                 name: buchubot-token
+          volumeMounts:
+            - name: config-volume
+              mountPath: /app
+              subPath: config-dir
+      volumes:
+        - name: config-volume
+          configMap:
+            name: buchubot-config
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
