@@ -35,10 +35,6 @@ spec:
             - name: config-volume
               mountPath: /app
               subPath: config-dir
-      volumes:
-        - name: config-volume
-          configMap:
-            name: buchubot-config
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
@@ -48,6 +44,10 @@ spec:
             runAsUser: 65532
             seccompProfile:
               type: RuntimeDefault
+      volumes:
+        - name: config-volume
+          configMap:
+            name: buchubot-config
       tolerations:
         - key: "low-spec"
           operator: "Exists"
