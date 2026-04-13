@@ -33,7 +33,8 @@ spec:
                 name: buchubot-token
           volumeMounts:
             - name: config-volume
-              mountPath: /app
+              mountPath: /app/config.toml
+              subPath: config.toml
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
