@@ -31,9 +31,13 @@ spec:
           envFrom:
             - secretRef:
                 name: buchubot-token
+          env:
+            - name: BUCHUBOT_CONFIG_PATH
+              value: /config/config.toml
           volumeMounts:
             - name: config-volume
-              mountPath: /
+              mountPath: /config
+              readOnly: true
           securityContext:
             allowPrivilegeEscalation: false
             capabilities:
