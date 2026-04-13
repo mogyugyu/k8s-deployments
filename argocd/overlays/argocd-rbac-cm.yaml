@@ -41,6 +41,9 @@ data:
     g, Zel9278, role:team-twibot-to-discord
     g, kazukazu123123, role:team-twibot-to-discord
 
+    p, role:team-misskey-bots, logs, get, misskey-bots/*, allow
+    g, kazukazu123123, role:team-misskey-bots
+
     p, role:team-pow, applications, *, pow/*, allow
     p, role:team-pow, logs, get, pow/*, allow
     g, kazukazu123123, role:team-pow
