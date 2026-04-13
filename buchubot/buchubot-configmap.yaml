@@ -5,8 +5,7 @@ metadata:
   labels:
     app: buchubot
 data:
-  config-dir:
-    config.toml: |
-      domain = "misskey.art"
-      use_tls = true
-      cron_schedule = "*/10 * * * *"
+  config.toml: |
+    domain = "misskey.art"
+    use_tls = true
+    cron_schedule = "*/10 * * * *"
