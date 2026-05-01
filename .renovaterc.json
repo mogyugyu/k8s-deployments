@@ -25,6 +25,13 @@
 			"depNameTemplate": "k3s",
 			"versioningTemplate": "semver-coerced",
 			"datasourceTemplate": "custom.k3s"
+		},
+		{
+			"customType": "regex",
+			"matchStrings": [
+				"https://github\\.com/(?<depName>rancher/system-upgrade-controller)/releases/download/(?<currentValue>v[0-9.]+)/"
+			],
+			"datasourceTemplate": "github-releases"
 		}
 	],
 	"customDatasources": {
