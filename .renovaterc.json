@@ -28,6 +28,9 @@
 		},
 		{
 			"customType": "regex",
+			"managerFilePatterns": [
+				"/k3s-upgrade/kustomization\\.yaml/"
+			],
 			"matchStrings": [
 				"https://github\\.com/(?<depName>rancher/system-upgrade-controller)/releases/download/(?<currentValue>v[0-9.]+)/"
 			],
